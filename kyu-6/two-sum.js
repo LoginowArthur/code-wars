@@ -9,17 +9,11 @@
 // twoSum [1, 2, 3] 4 === (0, 2)
 
 function twoSum(numbers, target) {
-    const answers = [];
     for (let i = 0; i <= numbers.length -1; i++) {
-        for (let j = 0; j <= numbers.length - 1; j++) {
-            if (i !== j && numbers[i] + numbers[j] === target) {
-                answers.push(i, j);
-                break;
-            }
+        for (let j = i + 1; j <= numbers.length - 1; j++) {
+            if (numbers[i] + numbers[j] === target) return [i, j]
         }
-        if (answers.length) break
     }
-    return answers;
 }
 
 console.log(twoSum([1234,5678,9012], 14690));
